@@ -31,7 +31,12 @@ class GenerateCards extends CI_Controller{
 	}
 	function Generate(){
 		$this->gift_m->generate();
-		echo "Done, This page under construcation";
+		$data=array(
+			'partners'=>$this->gift_m->index(),
+			'userdata'=>$this->user->userdata(),
+			'priv'=>$this->user->get_permisstion(),
+		);
+		$this->load->view('thanks_v',$data);
 		}
 	
 }

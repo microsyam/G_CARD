@@ -45,7 +45,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">Generate Gift Cards</h1>
 						<div class="panel panel-default">
-                <div class="panel-heading">Please select the partner and the quanities </div>
+                <div class="panel-heading">Result</div>
                 <div class="panel-body">
 				
                  <div class="form-group">

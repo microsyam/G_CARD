@@ -107,6 +107,13 @@
                             <label for="generategiftcards" class="label-primary"></label>
                         </div>
                     </li>
+					  <li class="list-group-item">
+                        Generate Report
+                        <div class="material-switch pull-right">
+                            <input id="giftcardreport" name="giftcardreport" value="1" <?php if ($pri[0]['p_gift_report']==1){echo "checked";}?> type="checkbox"/>
+                            <label for="giftcardreport" class="label-primary"></label>
+                        </div>
+                    </li>
 					
 					</div>
 				  </div>

@@ -82,6 +82,12 @@
                             <a href="<?php echo base_url();?>GenerateCards"><i class="fa fa fa-gift"></i> Generate Gift Cards<span class="fa arrow"></span></a>
                             </li>
 						<?php endif;?>
+
+						<?php if($priv[0]['p_gift_report']==1):?>
+						<li>
+                            <a href="<?php echo base_url();?>GiftDashboard"><i class="fa fa fa-gift"></i> Gift Card Report<span class="fa arrow"></span></a>
+                            </li>
+						<?php endif;?>
 						<?php if($priv[0]['p_add_user']+$priv[0]['p_edit_user']+$priv[0]['p_privilages']+$priv[0]['p_departments']+$priv[0]['p_general']!==0):?>
 						  
 						<li>

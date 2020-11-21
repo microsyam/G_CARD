@@ -123,6 +123,23 @@ ini_set('memory_limit','2048M');
 	
 }
 
+function report(){
+
+	$this->db->select('sum(gift_active) as redeemed,count(gift_id) as total,gp_name,gift_name,count(gift_id)-sum(gift_active) as minus,
+	 sum(gift_active)/count(gift_id) * 100 as perc
+	');
+	$this->db->from('gift_cards');
+	$this->db->join('gift_partners','gift_partners.gp_id=gift_cards.gift_part_id');
+	$this->db->group_by("gift_partners.gp_name");
+	$data=$this->db->get();
+	foreach ($data->result_array() as $row) {
+		$dt[] = $row;
+
+	}
+	return $dt;
+
+}
+
 
 	
 }

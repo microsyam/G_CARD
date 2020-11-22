@@ -74,6 +74,7 @@ class Privileges_m extends CI_Model{
 			'p_gift_redeem '=>$this->input->post('giftcards'),
 			'p_gift_generation'=>$this->input->post('generategiftcards'),
 			'p_gift_report'=>$this->input->post('giftcardreport'),
+				'p_gift_download'=>$this->input->post('giftcarddownload'),
 			);
 
 		$this->db->where('p_u_id',$this->input->post('select_user'));

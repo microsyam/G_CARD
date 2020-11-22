@@ -114,6 +114,13 @@
                             <label for="giftcardreport" class="label-primary"></label>
                         </div>
                     </li>
+					  <li class="list-group-item">
+                        Download Cards
+                        <div class="material-switch pull-right">
+                            <input id="giftcarddownload" name="giftcarddownload" value="1" <?php if ($pri[0]['p_gift_download']==1){echo "checked";}?> type="checkbox"/>
+                            <label for="giftcarddownload" class="label-primary"></label>
+                        </div>
+                    </li>
 					
 					</div>
 				  </div>

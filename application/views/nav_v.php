@@ -83,6 +83,12 @@
                             </li>
 						<?php endif;?>
 
+						<?php if($priv[0]['p_gift_download']==1):?>
+						<li>
+                            <a href="<?php echo base_url();?>GenerateCards/list"><i class="fa fa fa-gift"></i> Download Cards<span class="fa arrow"></span></a>
+                            </li>
+						<?php endif;?>
+
 						<?php if($priv[0]['p_gift_report']==1):?>
 						<li>
                             <a href="<?php echo base_url();?>GiftDashboard"><i class="fa fa fa-gift"></i> Gift Card Report<span class="fa arrow"></span></a>

@@ -42,18 +42,18 @@
         <div id="page-wrapper">
             <div class="container-fluid" >
                 <div class="row">
-				<?php echo form_open('GenerateCards/Generate');?>
+				<?php echo form_open_multipart('GenerateCards/Generate');?>
                     <div class="col-lg-12">
                         <h1 class="page-header">Generate Gift Cards</h1>
 						<div class="panel panel-default">
-                <div class="panel-heading">Please select the partener and the quanities</div>
+                <div class="panel-heading">Please select the partner and the quantities</div>
                 <div class="panel-body">
 				
                  <div class="form-group">
 				 
 				  <label  class="col-lg-2">Partner</label>
 					<div class="col-lg-3">
-					  <select class="selectpicker" data-show-subtext="true" data-live-search="true" name="partner"  >
+					  <select class="selectpicker" data-show-subtext="true" data-live-search="true" required name="partner"  >
                         <?php
                         if (count($partners)>=1) {
                             echo '<option disabled selected></option>';
@@ -81,11 +81,23 @@
 					</div>
 					
 					
-					
-					<div class="col-lg-3">
+					<br>
+					<br>
+					<div class="col-lg-5">
 					  <button type="submit" name="generate" class="btn btn-primary center-block">Generate</button>
 					  
 					</div>
+<br>
+<br>
+<br>
+					 <div class="col-lg-5">
+
+						 <input type="file" accept=".csv" name="file" class="form-control-file" name="upload"">
+						 <br>
+						 <button type="submit" name="upload" class="btn btn-primary center-block">Upload</button>
+					 </div>
+
+
 				</div>
                 </div>
                 </div>

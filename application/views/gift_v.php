@@ -44,7 +44,7 @@
                 <div class="row">
 				<?php echo form_open('Gift');?>
                     <div class="col-lg-12">
-                        <h1 class="page-header">Gift Card</h1>
+                        <h1 class="page-header">Checker</h1>
 						<div class="panel panel-default">
                 <div class="panel-heading">Card Information</div>
                 <div class="panel-body">

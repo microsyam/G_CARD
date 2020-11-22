@@ -47,6 +47,8 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">Result</div>
 						<div class="panel-body">
+
+							<?php if(!empty($partners)):?>
 							<table   class="table table-condensed table-bordered table-striped " >
 								<thead>
 								<tr>
@@ -62,6 +64,7 @@
 
 								</tr>
 								</thead>
+
 								<?php foreach($partners as $co):?>
 									<?php echo '<tr>'; ?>
 									<?php echo '<td>'.$co['gp_name'] .'</td>';?>
@@ -72,7 +75,11 @@
 
 
 								<?php endforeach ; ?>
+
 							</table>
+							<?php else:?>
+								<?php echo "No Result";?>
+							<?php endif;?>
 						</div>
 					</div>
 

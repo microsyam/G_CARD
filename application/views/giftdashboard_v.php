@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mohamed Syam">
 
-	<title>GiftCard Report| <?php echo $userdata[0]['s_name'];?></title>
+	<title>Gift Card Report| <?php echo $userdata[0]['s_name'];?></title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url();?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 		<div class="container-fluid" >
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Report</h1>
+					<h1 class="page-header">Gift Card Report</h1>
 					<div class="panel panel-default">
 						<div class="panel-heading">Result</div>
 						<div class="panel-body">

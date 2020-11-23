@@ -46,14 +46,15 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" id="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
+				<input type="checkbox"  value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button onclick="lsRememberMe()" class="login100-form-btn">
 							Login
 						</button>
 					</div>
@@ -63,7 +64,33 @@
 		</div>
 	</div>
 
+	<script>
+		const rmCheck = document.getElementById("rememberMe"),
+			emailInput = document.getElementById("username");
+			passwordInput = document.getElementById("password");
 
+		if (localStorage.checkbox && localStorage.checkbox !== "") {
+			rmCheck.setAttribute("checked", "checked");
+			emailInput.value = localStorage.username;
+			passwordInput.value = localStorage.password;
+		} else {
+			rmCheck.removeAttribute("checked");
+			emailInput.value = "";
+			passwordInput.value = "";
+		}
+
+		function lsRememberMe() {
+			if (rmCheck.checked && emailInput.value !== "") {
+				localStorage.username = emailInput.value;
+				localStorage.password = passwordInput.value;
+				localStorage.checkbox = rmCheck.value;
+			} else {
+				localStorage.username = "";
+				localStorage.password = "";
+				localStorage.checkbox = "";
+			}
+		}
+	</script>
 <!--===============================================================================================-->	
 	<script src="<?php echo base_url();?>loginv/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

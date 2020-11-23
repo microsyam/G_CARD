@@ -89,6 +89,12 @@
                             </li>
 						<?php endif;?>
 
+						<?php if($priv[0]['p_partners']==1):?>
+						<li>
+                            <a href="<?php echo base_url();?>Partners"><i class="fa fa fa-gift"></i> Partners<span class="fa arrow"></span></a>
+                            </li>
+						<?php endif;?>
+
 						<?php if($priv[0]['p_gift_report']==1):?>
 						<li>
                             <a href="<?php echo base_url();?>GiftDashboard"><i class="fa fa fa-gift"></i> Gift Card Report<span class="fa arrow"></span></a>

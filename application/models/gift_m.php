@@ -5,6 +5,7 @@ function index(){
 	
 	$this->db->select('*');
 	$this->db->from('gift_partners');
+	$this->db->where('gp_display',1);
 	$data=$this->db->get();
 	return $data->result();
 }

@@ -108,6 +108,13 @@
                         </div>
                     </li>
 					  <li class="list-group-item">
+                        Manage Partners
+                        <div class="material-switch pull-right">
+                            <input id="partners" name="partners" value="1" <?php if ($pri[0]['p_partners']==1){echo "checked";}?> type="checkbox"/>
+                            <label for="partners" class="label-primary"></label>
+                        </div>
+                    </li>
+					  <li class="list-group-item">
                         Generate Report
                         <div class="material-switch pull-right">
                             <input id="giftcardreport" name="giftcardreport" value="1" <?php if ($pri[0]['p_gift_report']==1){echo "checked";}?> type="checkbox"/>

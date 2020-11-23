@@ -56,6 +56,7 @@ $route['NewService/(:num)']="NewService/index/$1";
 $route['Departments/(:num)']="Departments/index/$1";
 $route['Plants/(:num)']="Plants/index/$1";
 $route['Vendors/(:num)']="Vendors/index/$1";
+$route['Partners/(:num)']="Partners/index/$1";
 $route['OpClass/(:num)']="OpClass/index/$1";
 $route['Branches/(:num)']="Branches/index/$1";
 $route['Branches/(:num)/(:num)']="Branches/index/$1/$2";

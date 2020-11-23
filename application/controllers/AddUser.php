@@ -29,9 +29,9 @@ class AddUser extends CI_Controller{
 	function save(){
 		$this->form_validation->set_error_delimiters('<div class="alert alert-warning">', '</div>'); 
 		$this->form_validation->set_rules('name','Name','trim|required|xss_clean');
-		$this->form_validation->set_rules('username','UserName','trim|required|xss_clean|is_unique[users.u_username]|min_length[5]|max_length[70]');
-		$this->form_validation->set_rules('email','Email Address','trim|required|xss_clean|valid_email|is_unique[users.u_email]|min_length[5]|max_length[50]');
-		$this->form_validation->set_rules('phone','Phone','trim|required|xss_clean|numeric');
+		$this->form_validation->set_rules('username','UserName','trim|required|xss_clean|is_unique[users.u_username]|min_length[2]|max_length[100]');
+		$this->form_validation->set_rules('email','Email Address','trim|xss_clean');
+		$this->form_validation->set_rules('phone','Phone','trim|xss_clean|numeric');
 		$this->form_validation->set_rules('department','Department','trim|required|xss_clean|numeric');
 		if($this->form_validation->run()==false){
                $this->load->view('adduser_v', array(

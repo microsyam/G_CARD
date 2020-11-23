@@ -37,7 +37,6 @@ class Gift extends CI_Controller{
 			'priv'=>$this->user->get_permisstion(),
 			);
 			$this->load->view('gift_v',$data);
-		
 		}else{
 		$data=array(
 		'partners'=>$this->gift_m->index(),

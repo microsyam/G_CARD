@@ -64,10 +64,13 @@ function redeem(){
                 }
             }
 	$redeemvalue=$this->input->post("redeem");
-	
-		$this->db->where('gift_id',$redeemvalue);
-		$this->db->update('gift_cards',array('gift_active'=>'1','gift_u_id'=>$userid[0]['u_id'],'gift_date'=>date('Y-m-d H:i:s')));
-		
+
+		 $this->db->select('*')->from('gift_cards')->where('gift_id',$redeemvalue);
+		 $value=$this->db->get()->row()->gift_active;
+	if($value!=1) {
+		$this->db->where('gift_id', $redeemvalue);
+		$this->db->update('gift_cards', array('gift_active' => '1', 'gift_u_id' => $userid[0]['u_id'], 'gift_date' => date('Y-m-d H:i:s')));
+	}
 	
 	
 }

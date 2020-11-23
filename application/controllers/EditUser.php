@@ -61,8 +61,8 @@ class EditUser extends CI_Controller{
 				$this->form_validation->set_error_delimiters('<div class="alert alert-warning">', '</div>'); 
 		$this->form_validation->set_rules('select_user','User','trim|required|xss_clean');
 		$this->form_validation->set_rules('name','Name','trim|required|xss_clean');
-		$this->form_validation->set_rules('email','Email Address','trim|required|xss_clean|valid_email|min_length[5]|max_length[50]');
-		$this->form_validation->set_rules('phone','Phone','trim|required|xss_clean|numeric');
+		$this->form_validation->set_rules('email','Email Address','trim|xss_clean');
+		$this->form_validation->set_rules('phone','Phone','trim|xss_clean|numeric');
 		$this->form_validation->set_rules('department','Department','trim|required|xss_clean|numeric');
 			
 			if($this->form_validation->run()==false){
@@ -86,7 +86,7 @@ class EditUser extends CI_Controller{
 			
 			elseif(isset($_POST['chpass'])){	
 			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|min_length[7]|max_length[45]|matches[password]');
+			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|min_length[3]|max_length[45]|matches[password]');
 			if($this->form_validation->run()==false){
 				$this->load->view('edituser_v',array(
                     'userdata' => $this->user->userdata(),

@@ -93,7 +93,7 @@
 					</div>
 					<?php if(count($user_result)==1):?>
 						<div class="panel panel-default">
-					  <div class="panel-heading">Create User</div>
+					  <div class="panel-heading">User information</div>
 					  <div class="panel-body">
 					 
 					  <label  class="col-lg-2">Name</label>

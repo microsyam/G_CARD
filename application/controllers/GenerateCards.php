@@ -66,7 +66,7 @@ class GenerateCards extends CI_Controller{
 		}
 	}
 
-	function list()
+	function DownloadCards()
 	{
 		$perm=$this->user->get_permisstion();
 		if($perm[0]['p_gift_download']!=1){

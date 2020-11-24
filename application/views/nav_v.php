@@ -7,8 +7,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a  href="<?php echo base_url();?>">
-				
-				<img style="padding-left:10px" height="50px" src="<?php echo base_url().'images/'.$userdata[0]['s_logo'];?>"/> <!--class="navbar-brand"-->
+
+				<img alt="<?php echo $userdata[0]['s_name'];?>" style="padding-left:10px" height="50px" src="<?php echo base_url().'images/'.$userdata[0]['s_logo'];?>"/> <!--class="navbar-brand"-->
 				
 				</a>
             </div>
@@ -42,8 +42,8 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
-                </li-->
+                    </.dropdown-messages-->
+                <!--/li-->
                 <!-- /.dropdown -->
                 
                 <!-- /.dropdown -->
@@ -85,7 +85,7 @@
 
 						<?php if($priv[0]['p_gift_download']==1):?>
 						<li>
-                            <a href="<?php echo base_url();?>GenerateCards/list"><i class="fa fa fa-gift"></i> Download Cards<span class="fa arrow"></span></a>
+                            <a href="<?php echo base_url();?>GenerateCards/DownloadCards"><i class="fa fa fa-gift"></i> Download Cards<span class="fa arrow"></span></a>
                             </li>
 						<?php endif;?>
 

@@ -10,7 +10,7 @@
     <meta name="author" content="Mohamed Syam">
 
     <title>Create User |<?php echo $userdata[0]['s_name'];?></title>
-
+	<link rel="icon" href="<?php echo base_url();?>tg.ico" type="image/gif" sizes="16x16">
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

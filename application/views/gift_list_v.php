@@ -10,6 +10,8 @@
 	<meta name="author" content="Mohamed Syam">
 
 	<title> Download Cards | <?php echo $userdata[0]['s_name'];?></title>
+	<link rel="icon" href="<?php echo base_url();?>tg.ico" type="image/gif" sizes="16x16">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 

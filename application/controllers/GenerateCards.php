@@ -32,37 +32,51 @@ class GenerateCards extends CI_Controller{
 	{
 		if (isset($_POST['upload'])) {
 
-				$file = $_FILES['file']['tmp_name'];
-				$handle = fopen($file, "r");
-				$c = 0;//
-				$head_id=$this->gift_m->upheader();
-				while(($filesop = fgetcsv($handle, 1000, ",")) !== false)
-				{
-					$code = $filesop[0];
-					if($c<>0){					//SKIP THE FIRST ROW
-						$this->gift_m->upload($code,$head_id);
-					}
-					$c = $c + 1;
+			$this->form_validation->set_rules('name', 'Discount Type', 'trim|required|xss_clean|min_length[3]');
+			$this->form_validation->set_rules('partner', 'Partner', 'required');
+			if ($_FILES['file']['size'] == 0) {
+				$this->form_validation->set_rules('file', 'CSV', 'required');
+			}
+			if ($this->form_validation->run() == false) {
+				$this->index();
+			}else{
+			$file = $_FILES['file']['tmp_name'];
+			$handle = fopen($file, "r");
+			$c = 0;//
+			$head_id = $this->gift_m->upheader();
+			while (($filesop = fgetcsv($handle, 1000, ",")) !== false) {
+				$code = $filesop[0];
+				if ($c <> 0) {                    //SKIP THE FIRST ROW
+					$this->gift_m->upload($code, $head_id);
 				}
+				$c = $c + 1;
+			}
 
 			$this->gift_m->update_qty($head_id);
 
-				$data = array(
-					'partners' => $this->gift_m->index(),
-					'userdata' => $this->user->userdata(),
-					'priv' => $this->user->get_permisstion(),
-				);
-				$this->load->view('thanks_v', $data);
-		} else {
-
-
-			$this->gift_m->generate();
 			$data = array(
 				'partners' => $this->gift_m->index(),
 				'userdata' => $this->user->userdata(),
 				'priv' => $this->user->get_permisstion(),
 			);
 			$this->load->view('thanks_v', $data);
+		}
+		} else {
+			$this->form_validation->set_rules('name','Discount Type','trim|required|xss_clean|min_length[3]');
+			$this->form_validation->set_rules('partner','Partner','required');
+			$this->form_validation->set_rules('qty','Number of cards','trim|required|xss_clean|numeric');
+			if($this->form_validation->run()==true){
+				$this->gift_m->generate();
+				$data = array(
+					'partners' => $this->gift_m->index(),
+					'userdata' => $this->user->userdata(),
+					'priv' => $this->user->get_permisstion(),
+				);
+				$this->load->view('thanks_v', $data);
+			}else{
+				$this->index();
+			}
+
 		}
 	}
 

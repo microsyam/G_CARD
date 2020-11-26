@@ -47,6 +47,12 @@
                         <h1 class="page-header">Generate Gift Cards</h1>
 						<div class="panel panel-default">
                 <div class="panel-heading">Please select the partner and the quantities</div>
+							<?php if(!empty(validation_errors())):?>
+							<div class="alert alert-warning">
+								<strong>Warning!</strong> <?php echo validation_errors(); ?>
+							</div>
+							<?php endif;?>
+
                 <div class="panel-body">
 				
                  <div class="form-group">
@@ -69,7 +75,7 @@
 					<br>
 					<label  class="col-lg-2">Discount Type</label>
 					<div class="col-lg-2">
-					  <input type="text" class="form-control"  name="name">
+					  <input type="text" class="form-control"  required name="name">
 					  
 					</div>
 					<br>
@@ -84,7 +90,7 @@
 					<br>
 					<br>
 					<div class="col-lg-5">
-					  <button type="submit" name="generate" class="btn btn-primary center-block">Generate</button>
+					  <button type="submit" name="generate"  class="btn btn-primary center-block">Generate</button>
 					  
 					</div>
 <br>
@@ -92,7 +98,7 @@
 <br>
 					 <div class="col-lg-5">
 
-						 <input type="file" accept=".csv" name="file" class="form-control-file" name="upload"">
+						 <input type="file" accept=".csv" name="file" class="form-control-file">
 						 <br>
 						 <button type="submit" name="upload" class="btn btn-primary center-block">Upload</button>
 					 </div>

@@ -51,7 +51,7 @@
 					  <?php echo form_open('AddUser/save');?>
 					  <label  class="col-lg-2">Name</label>
 					<div class="col-lg-3">
-					  <input type="text" class="form-control" name="name">
+					  <input type="text" class="form-control" name="name" value="<?php echo set_value('name'); ?>">
 					  
 					</div>
 					<br>
@@ -59,7 +59,7 @@
 					<br>
 					  <label  class="col-lg-2">Phone Number</label>
 					<div class="col-lg-3">
-					  <input type="text" class="form-control" name="phone">
+					  <input type="text" class="form-control" name="phone" value="<?php echo set_value('phone'); ?>">
 					  
 					</div>
 					<br>
@@ -67,7 +67,7 @@
 					<br>
 					<label  class="col-lg-2">Email</label>
 					<div class="col-lg-3">
-					  <input type="email" class="form-control" name="email">
+					  <input type="email" class="form-control" name="email" value="<?php echo set_value('email'); ?>">
 					  
 					</div>
 					<br>
@@ -75,7 +75,7 @@
 					<br>
 					<label  class="col-lg-2">Username</label>
 					<div class="col-lg-3">
-					  <input type="text" class="form-control" name="username">
+					  <input type="text" class="form-control" name="username" value="<?php echo set_value('username'); ?>">
 					  
 					</div>
 					<br>
@@ -90,7 +90,7 @@
 					<br>
 					<br>
 					
-					<label  class="col-lg-2">Deparment</label>
+					<label  class="col-lg-2">Department</label>
 					<div class="col-lg-3">
 					  <select class="selectpicker" data-show-subtext="true" data-live-search="true" name="department"  >
                         <?php

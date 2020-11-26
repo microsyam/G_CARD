@@ -75,14 +75,14 @@
 					<br>
 					<label  class="col-lg-2">Discount Type</label>
 					<div class="col-lg-2">
-					  <input type="text" class="form-control"  required name="name">
+					  <input type="text" class="form-control"  required value="<?php echo set_value('name'); ?>" name="name">
 					  
 					</div>
 					<br>
 					<br>
 					<label  class="col-lg-2">Number of cards</label>
 					<div class="col-lg-2">
-					  <input type="text" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" class="form-control"  name="qty">
+					  <input type="text" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" class="form-control"  value="<?php echo set_value('qty'); ?>" name="qty">
 					  
 					</div>
 					

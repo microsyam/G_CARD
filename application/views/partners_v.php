@@ -46,13 +46,18 @@
 					<h1 class="page-header">Partners</h1>
 					<div class="panel panel-default">
 						<div class="panel-heading">Add Partner</div>
+						<?php if(!empty(validation_errors())):?>
+							<div class="alert alert-warning">
+								<strong>Warning!</strong> <?php echo validation_errors(); ?>
+							</div>
+						<?php endif;?>
 						<div class="panel-body">
 
 							<div class="form-group">
 								<?php echo form_open('Partners/save');?>
 								<label for="name" class="col-lg-2">Name</label>
 								<div class="col-lg-3">
-									<input type="text" class="form-control" required placeholder="Partner Name" name="partner" id="name">
+									<input type="text" class="form-control" value="<?php echo set_value('partner');?>" name="partner">
 
 								</div>
 								<div class="col-lg-3">

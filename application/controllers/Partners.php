@@ -11,7 +11,7 @@ class Partners extends CI_Controller{
 			redirect('Logout','refresh');
 		}
 	}
-	function index(){
+	public function index(){
 		$perm=$this->user->get_permisstion();
 		if($perm[0]['p_partners']!=1){
 			redirect('NotAuth','refresh');
@@ -57,10 +57,14 @@ class Partners extends CI_Controller{
 
 	function save(){
 
+		$this->form_validation->set_rules('partner','Partner Name','trim|required|xss_clean|min_length[2]');
 
-		$this->partners_m->save();
-
-		redirect('Partners','refresh');
+		if($this->form_validation->run()==false){
+			redirect('Partners','refresh');
+		}else{
+			$this->partners_m->save();
+			redirect('Partners','refresh');
+		}
 	}
 
 	function remove(){

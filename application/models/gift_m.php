@@ -9,6 +9,26 @@ function index(){
 	$data=$this->db->get();
 	return $data->result();
 }
+	 function log(){
+		$session_data = $this->session->userdata('logged_in');
+		$name = $session_data['username'];
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('u_username', $name);
+		$user_data = $query = $this->db->get();
+		if ($user_data->num_rows() > 0) {
+			foreach ($query->result_array() as $row_userdata) {
+
+				$userid[] = $row_userdata;
+			}
+		}
+
+		$file = 'loga.txt';
+		//Open file in Overwrite Mode
+		$fh = fopen($file,'a');
+		fwrite($fh,"\n"."-- ".$userid[0]['u_name']." checked a wrong code : ".$this->input->post("gift_code"). "\r\n" );
+		fclose($fh);
+	}
 
 function checker(){
 	
@@ -37,8 +57,9 @@ function checker(){
             }
 		return $dt;
 	}else{
-		
+		$this->log();
 		return false; // Returning no result for invalid message
+
 	}
 	
 }

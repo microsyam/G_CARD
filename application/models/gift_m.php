@@ -26,7 +26,9 @@ function index(){
 		$file = 'loga.txt';
 		//Open file in Overwrite Mode
 		$fh = fopen($file,'a');
-		fwrite($fh,"\n"."-- ".$userid[0]['u_name']." checked a wrong code : ".$this->input->post("gift_code"). "\r\n" );
+
+		fwrite($fh, "\n" . "-- " .date('Y-m-d H:i:s'). " [". $userid[0]['u_name'] . "] Checked a wrong code : " . $this->input->post("gift_code") . "\r\n");
+
 		fclose($fh);
 	}
 

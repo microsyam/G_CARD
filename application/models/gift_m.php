@@ -22,6 +22,14 @@ function index(){
 				$userid[] = $row_userdata;
 			}
 		}
+		 $this->db->select('*')->from('settings')->where('s_id','1');
+
+		 $dd=$this->db->get();
+		 foreach($dd->result_array() as $bb){
+			 $setin[]=$bb;
+		 }
+		 $timezone=$setin[0]['s_timezone'];
+		 date_default_timezone_set($timezone);
 
 		$file = 'loga.txt';
 		//Open file in Overwrite Mode

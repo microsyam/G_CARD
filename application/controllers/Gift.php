@@ -9,9 +9,11 @@ class Gift extends CI_Controller{
 		$this->load->model(array('user','gift_m'));
 		  }
 		else{
-            redirect('Logout','refresh');
+            redirect('login','refresh');
         }
     }
+
+
 	
 	function index(){
 		$perm=$this->user->get_permisstion();
